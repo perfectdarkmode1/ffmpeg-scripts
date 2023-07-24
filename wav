@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#This script converts mp3 files to wav and deletes the old mp3 file.
+
 filename="$1"
 
 (ffmpeg -i "$filename" -acodec pcm_s16le -ar 8000 -ac 1 "${filename%.mp3}.wav" && rm "$filename")
